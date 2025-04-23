@@ -71,3 +71,14 @@ The dataset is automatically downloaded from Kaggle (`fedesoriano/heart-failure-
 ### Model Evaluation and Tracking
 
 All experiments are logged to MLflow, including accuracy, AUC, training duration, and hyperparameters. Models can be compared and ranked through the Streamlit dashboard, with optional cleanup of artifacts and run history.
+
+### Screenshots
+
+![image](https://github.com/user-attachments/assets/56a9df6a-2efb-452f-a142-fcf7e3da360b)
+
+![image](https://github.com/user-attachments/assets/de4f7a05-f7cc-4e9f-acf3-9e5962a9c461)
+
+![image](https://github.com/user-attachments/assets/cfb03d94-207f-4b09-87a1-af2657f3a35f)
+
+
+
