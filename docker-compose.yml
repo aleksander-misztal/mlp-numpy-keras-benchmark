@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    container_name: ml_pipeline_container
+    volumes:
+      - .:/app  # Mount current directory to container
+    ports:
+      - "8888:8888"  # Expose Jupyter
+      - "8501:8501"  # Expose Streamlit
+    command: >
+      bash -c "
+        # Run Jupyter notebook (no auth for dev use)
+        jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token='' --NotebookApp.password='' & 
+        # Run Streamlit dashboard
+        streamlit run dashboard.py
+      "
+
+  tests:
+    build: .
+    container_name: ml_pipeline_test_runner
+    volumes:
+      - .:/app  # Use same codebase for tests
+    command: pytest --disable-warnings  # Run test suite with clean output
